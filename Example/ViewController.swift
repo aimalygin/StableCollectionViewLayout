@@ -10,8 +10,12 @@ import InfiniteCollectionViewFlowLayout
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var rowsPerSection: Int = 1
+    var scrollDirection: UICollectionView.ScrollDirection = .vertical
+    
     private lazy var layout: InfiniteCollectionViewFlowLayout = {
         let layout = InfiniteCollectionViewFlowLayout()
+        layout.scrollDirection = scrollDirection
         layout.minimumInteritemSpacing = 1
         return layout
     }()
@@ -21,7 +25,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionViewLayout: layout
     )
     
-    var items: [(String, CGFloat)] = (0..<100).map({ i in ("\(i)", randomBool() ? 70 : 150) })
+    var items: [(String, CGFloat)] = (0..<100).map({ i in ("\(i)", randomHeight()) })
     
     let batchCount = 30
 
@@ -88,10 +92,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         let item = items[indexPath.row]
         if flowLayout.scrollDirection == .vertical {
-            return CGSize(width: collectionView.frame.width/3 - 10, height: item.1)
+            return CGSize(width: collectionView.frame.width/CGFloat(rowsPerSection) - 10, height: item.1)
         } else {
-            return CGSize(width: item.1, height: collectionView.frame.height/3 - 10)
+            return CGSize(width: item.1, height: collectionView.frame.height/CGFloat(rowsPerSection) - flowLayout.minimumLineSpacing*CGFloat(rowsPerSection)*2)
         }
+    }
+    
+    private static func randomHeight() -> CGFloat {
+        CGFloat(floor(Double.random(in: 100...200)))
     }
     
     private static func randomBool() -> Bool {
@@ -143,13 +151,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let indexPaths = (items.count - batchCount..<items.count).map({ IndexPath(row: $0, section: 0) })
         let deleteIndexPaths = (0..<batchCount).map({ IndexPath(row: $0, section: 0) })
         items.removeFirst(batchCount)
-        UIView.performWithoutAnimation {
-            self.collectionView.deleteItems(at: deleteIndexPaths)
-        }
-
         items.append(contentsOf: head)
         UIView.performWithoutAnimation {
-            self.collectionView.insertItems(at: indexPaths)
+            self.collectionView.performBatchUpdates({
+                self.collectionView.deleteItems(at: deleteIndexPaths)
+                self.collectionView.insertItems(at: indexPaths)
+            }, completion: nil)
         }
     }
 }

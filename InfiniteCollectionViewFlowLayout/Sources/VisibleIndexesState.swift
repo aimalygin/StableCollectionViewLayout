@@ -72,6 +72,42 @@ public struct VisibleIndexesState {
         return VisibleIndexesState(bottom: bottomIndexPath, top: topIndexPath, targetIndexPath: targetIndexPath)
     }
     
+    func decrementedRows() -> VisibleIndexesState {
+        let indexPath = currentTargetIndexPath
+        var bottomIndexPath = bottom
+        if bottom == indexPath {
+            bottomIndexPath = IndexPath(row: bottom.row - 1, section: bottom.section)
+        }
+        var topIndexPath = top
+        if top == indexPath {
+            topIndexPath = IndexPath(row: top.row - 1, section: top.section)
+        }
+        var targetIndexPath = self.targetIndexPath
+        if let targetIndex = targetIndexPath,
+            targetIndex == indexPath {
+            targetIndexPath = IndexPath(row: targetIndex.row - 1, section: targetIndex.section)
+        }
+        return VisibleIndexesState(bottom: bottomIndexPath, top: topIndexPath, targetIndexPath: targetIndexPath)
+    }
+    
+    func decrementedSections() -> VisibleIndexesState {
+        let indexPath = currentTargetIndexPath
+        var bottomIndexPath = bottom
+        if bottom.section <= indexPath.section {
+            bottomIndexPath = IndexPath(row: bottom.row, section: bottom.section - 1)
+        }
+        var topIndexPath = top
+        if top.section <= indexPath.section {
+            topIndexPath = IndexPath(row: top.row, section: top.section - 1)
+        }
+        
+        var targetIndexPath = self.targetIndexPath
+        if let targetIndex = targetIndexPath, targetIndex.section <= indexPath.section {
+            targetIndexPath = IndexPath(row: targetIndex.row, section: targetIndex.section - 1)
+        }
+        return VisibleIndexesState(bottom: bottomIndexPath, top: topIndexPath, targetIndexPath: targetIndexPath)
+    }
+    
     private var targetIndexPathIsVisible: Bool {
         guard let target = targetIndexPath else { return false }
         return target <= bottom && target >= top

@@ -10,11 +10,6 @@ import UIKit
 
 public protocol OffsetController {
     var scrollDirection: UICollectionView.ScrollDirection { get set }
-    var minimumLineSpacing: CGFloat { get set }
-    var minimumInteritemSpacing: CGFloat { get set }
-    
-    var isLayoutAttributeEmpty: Bool { get }
-    
-    func refreshAttributes()
-    func calculateOffsetDiff(for updates: [CollectionViewUpdateItem]) -> CGFloat
+    func refreshVisibleAttributes()
+    func offsetDifference(for updates: [CollectionViewUpdateItem]) -> CGFloat
 }

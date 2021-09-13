@@ -13,6 +13,10 @@ public struct CollectionViewUpdateItem {
     let indexPathAfterUpdate: IndexPath?
     let updateAction: UICollectionViewUpdateItem.Action
     let isSection: Bool
+    
+    var isRow: Bool {
+        !isSection
+    }
 }
 
 extension CollectionViewUpdateItem {

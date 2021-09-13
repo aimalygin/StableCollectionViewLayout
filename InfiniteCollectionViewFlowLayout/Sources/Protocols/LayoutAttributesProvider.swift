@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public protocol LayoutAttributesProvider: class {
+public protocol LayoutAttributesProvider: AnyObject {
     func layoutAttributesForSupplementaryView(
         ofKind elementKind: String,
         at indexPath: IndexPath

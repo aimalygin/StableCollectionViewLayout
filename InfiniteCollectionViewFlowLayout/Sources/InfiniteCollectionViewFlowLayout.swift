@@ -18,8 +18,6 @@ public class InfiniteCollectionViewFlowLayout: UICollectionViewFlowLayout, Layou
     private lazy var offsetController: OffsetController = OffsetControllerImpl(
         layoutDataSource: self,
         collectionDataSource: self,
-        minimumLineSpacing: minimumLineSpacing,
-        minimumInteritemSpacing: minimumInteritemSpacing,
         scrollDirection: scrollDirection
     )
     
@@ -39,25 +37,6 @@ public class InfiniteCollectionViewFlowLayout: UICollectionViewFlowLayout, Layou
             offsetController.scrollDirection = scrollDirection
         }
     }
-    
-    public override var minimumLineSpacing: CGFloat {
-        didSet {
-            offsetController.minimumLineSpacing = minimumLineSpacing
-        }
-    }
-    
-    public override var minimumInteritemSpacing: CGFloat {
-        didSet {
-            offsetController.minimumInteritemSpacing = minimumInteritemSpacing
-        }
-    }
-          
-    override open func prepare() {
-      super.prepare()
-      if offsetController.isLayoutAttributeEmpty {
-        offsetController.refreshAttributes()
-      }
-    }
         
     override open func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
         defer {
@@ -70,7 +49,7 @@ public class InfiniteCollectionViewFlowLayout: UICollectionViewFlowLayout, Layou
         
         let previousContentOffset = scrollDirection == .vertical ?
             collectionView.contentOffset.y : collectionView.contentOffset.x
-        let diff = offsetController.calculateOffsetDiff(
+        let diff = offsetController.offsetDifference(
             for: updateItems.map({ CollectionViewUpdateItem(item: $0) })
         )
         guard diff != 0 else {
@@ -84,15 +63,11 @@ public class InfiniteCollectionViewFlowLayout: UICollectionViewFlowLayout, Layou
         offset = nil
     }
     
-    override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        // workaround for iOS 12 and less
-        // https://stackoverflow.com/questions/19207924/uicollectionview-exception-in-uicollectionviewlayoutattributes-from-ios7/37563336
-        
-        if #available(iOS 13, *) {
-            let value = super.shouldInvalidateLayout(forBoundsChange: newBounds)
-            return value
+    public override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) { 
+        if !context.invalidateEverything {
+            offsetController.refreshVisibleAttributes()
         }
-        return true
+        super.invalidateLayout(with: context)
     }
             
     override open func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {

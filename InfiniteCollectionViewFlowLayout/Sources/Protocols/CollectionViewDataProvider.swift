@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol CollectionViewDataProvider: class {
+public protocol CollectionViewDataProvider: AnyObject {
     var numberOfSections: Int { get }
     func numberOfItems(inSection section: Int) -> Int
     var indexPathsForVisibleItems: [IndexPath] { get }

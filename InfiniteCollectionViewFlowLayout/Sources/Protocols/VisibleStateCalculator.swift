@@ -7,19 +7,19 @@
 
 import Foundation
 
-public protocol AttributesFinder {
-    func suitableLayoutAttributes(
-        _ updateItem: CollectionViewUpdateItem,
+public protocol VisibleStateCalculator {
+    func calculate(
+        for updateItem: CollectionViewUpdateItem,
         visibleState: VisibleIndexesState
-    ) -> CalculationResult
+    ) -> VisibleIndexesState
     
-    func suitableLayoutAttributesForSection(
+    func calculateSection(
         _ updateItem: CollectionViewUpdateItem,
         visibleState: VisibleIndexesState
-    ) -> CalculationResult
+    ) -> VisibleIndexesState
     
-    func suitableLayoutAttributesForItem(
+    func calculateItem(
         _ updateItem: CollectionViewUpdateItem,
         visibleState: VisibleIndexesState
-    ) -> CalculationResult
+    ) -> VisibleIndexesState
 }
