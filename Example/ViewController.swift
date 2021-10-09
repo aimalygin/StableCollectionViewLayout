@@ -6,15 +6,15 @@
 //
 
 import UIKit
-import InfiniteCollectionViewFlowLayout
+import StableCollectionViewLayout
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var rowsPerSection: Int = 1
     var scrollDirection: UICollectionView.ScrollDirection = .vertical
     
-    private lazy var layout: InfiniteCollectionViewFlowLayout = {
-        let layout = InfiniteCollectionViewFlowLayout()
+    private lazy var layout: StableCollectionViewLayout = {
+        let layout = StableCollectionViewLayout()
         layout.scrollDirection = scrollDirection
         layout.minimumInteritemSpacing = 1
         return layout

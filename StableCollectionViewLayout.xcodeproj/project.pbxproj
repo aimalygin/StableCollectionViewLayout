@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		045B242226EFD32300B9364B /* AbstractVisibleStateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B242126EFD32300B9364B /* AbstractVisibleStateCalculator.swift */; };
 		045B242426EFFC2A00B9364B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B242326EFFC2A00B9364B /* TableViewController.swift */; };
-		9F221697261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.framework */; };
-		9F22169C261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22169B261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests.swift */; };
-		9F22169E261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F221690261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F221697261DC73E0031B035 /* StableCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */; };
+		9F22169C261DC73E0031B035 /* StableCollectionViewLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22169B261DC73E0031B035 /* StableCollectionViewLayoutTests.swift */; };
+		9F22169E261DC73E0031B035 /* StableCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F221690261DC73E0031B035 /* StableCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F2216B0261DC7630031B035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216AF261DC7630031B035 /* AppDelegate.swift */; };
 		9F2216B4261DC7630031B035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216B3261DC7630031B035 /* ViewController.swift */; };
 		9F2216B7261DC7630031B035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2216B5261DC7630031B035 /* Main.storyboard */; };
@@ -28,8 +28,8 @@
 		9F2216E9261DC8720031B035 /* InsertVisibleStateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216E4261DC8720031B035 /* InsertVisibleStateCalculator.swift */; };
 		9F2216EB261DC8720031B035 /* DeleteVisibleStateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216E6261DC8720031B035 /* DeleteVisibleStateCalculator.swift */; };
 		9F2216FA261DC9BB0031B035 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216F9261DC9BB0031B035 /* DemoCollectionViewCell.swift */; };
-		9F221702261DCA310031B035 /* InfiniteCollectionViewFlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.framework */; };
-		9F221703261DCA310031B035 /* InfiniteCollectionViewFlowLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F221702261DCA310031B035 /* StableCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */; };
+		9F221703261DCA310031B035 /* StableCollectionViewLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F221703261DCA310031B035 /* InfiniteCollectionViewFlowLayout.framework in Embed Frameworks */,
+				9F221703261DCA310031B035 /* StableCollectionViewLayout.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,11 +66,11 @@
 /* Begin PBXFileReference section */
 		045B242126EFD32300B9364B /* AbstractVisibleStateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractVisibleStateCalculator.swift; sourceTree = "<group>"; };
 		045B242326EFFC2A00B9364B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		9F22168D261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InfiniteCollectionViewFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F221690261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StableCollectionViewLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F221690261DC73E0031B035 /* StableCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StableCollectionViewLayout.h; sourceTree = "<group>"; };
 		9F221691261DC73E0031B035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F221696261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniteCollectionViewFlowLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F22169B261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCollectionViewFlowLayoutTests.swift; sourceTree = "<group>"; };
+		9F221696261DC73E0031B035 /* StableCollectionViewLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StableCollectionViewLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F22169B261DC73E0031B035 /* StableCollectionViewLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableCollectionViewLayoutTests.swift; sourceTree = "<group>"; };
 		9F22169D261DC73E0031B035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F2216AD261DC7630031B035 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2216AF261DC7630031B035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F221697261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.framework in Frameworks */,
+				9F221697261DC73E0031B035 /* StableCollectionViewLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F221702261DCA310031B035 /* InfiniteCollectionViewFlowLayout.framework in Frameworks */,
+				9F221702261DCA310031B035 /* StableCollectionViewLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +122,8 @@
 		9F221683261DC73E0031B035 = {
 			isa = PBXGroup;
 			children = (
-				9F22168F261DC73E0031B035 /* InfiniteCollectionViewFlowLayout */,
-				9F22169A261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests */,
+				9F22168F261DC73E0031B035 /* StableCollectionViewLayout */,
+				9F22169A261DC73E0031B035 /* StableCollectionViewLayoutTests */,
 				9F2216AE261DC7630031B035 /* Example */,
 				9F22168E261DC73E0031B035 /* Products */,
 				9F221701261DCA310031B035 /* Frameworks */,
@@ -133,30 +133,30 @@
 		9F22168E261DC73E0031B035 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F22168D261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.framework */,
-				9F221696261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests.xctest */,
+				9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */,
+				9F221696261DC73E0031B035 /* StableCollectionViewLayoutTests.xctest */,
 				9F2216AD261DC7630031B035 /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F22168F261DC73E0031B035 /* InfiniteCollectionViewFlowLayout */ = {
+		9F22168F261DC73E0031B035 /* StableCollectionViewLayout */ = {
 			isa = PBXGroup;
 			children = (
-				9F221690261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.h */,
+				9F221690261DC73E0031B035 /* StableCollectionViewLayout.h */,
 				9F221691261DC73E0031B035 /* Info.plist */,
 				9F2216C4261DC7840031B035 /* Sources */,
 			);
-			path = InfiniteCollectionViewFlowLayout;
+			path = StableCollectionViewLayout;
 			sourceTree = "<group>";
 		};
-		9F22169A261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests */ = {
+		9F22169A261DC73E0031B035 /* StableCollectionViewLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F22169B261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests.swift */,
+				9F22169B261DC73E0031B035 /* StableCollectionViewLayoutTests.swift */,
 				9F22169D261DC73E0031B035 /* Info.plist */,
 			);
-			path = InfiniteCollectionViewFlowLayoutTests;
+			path = StableCollectionViewLayoutTests;
 			sourceTree = "<group>";
 		};
 		9F2216AE261DC7630031B035 /* Example */ = {
@@ -222,16 +222,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F22169E261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.h in Headers */,
+				9F22169E261DC73E0031B035 /* StableCollectionViewLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9F22168C261DC73E0031B035 /* InfiniteCollectionViewFlowLayout */ = {
+		9F22168C261DC73E0031B035 /* StableCollectionViewLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F2216A1261DC73E0031B035 /* Build configuration list for PBXNativeTarget "InfiniteCollectionViewFlowLayout" */;
+			buildConfigurationList = 9F2216A1261DC73E0031B035 /* Build configuration list for PBXNativeTarget "StableCollectionViewLayout" */;
 			buildPhases = (
 				9F221688261DC73E0031B035 /* Headers */,
 				9F221689261DC73E0031B035 /* Sources */,
@@ -242,14 +242,14 @@
 			);
 			dependencies = (
 			);
-			name = InfiniteCollectionViewFlowLayout;
+			name = StableCollectionViewLayout;
 			productName = InfiniteCollectionViewFlowLayout;
-			productReference = 9F22168D261DC73E0031B035 /* InfiniteCollectionViewFlowLayout.framework */;
+			productReference = 9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9F221695261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests */ = {
+		9F221695261DC73E0031B035 /* StableCollectionViewLayoutTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F2216A4261DC73E0031B035 /* Build configuration list for PBXNativeTarget "InfiniteCollectionViewFlowLayoutTests" */;
+			buildConfigurationList = 9F2216A4261DC73E0031B035 /* Build configuration list for PBXNativeTarget "StableCollectionViewLayoutTests" */;
 			buildPhases = (
 				9F221692261DC73E0031B035 /* Sources */,
 				9F221693261DC73E0031B035 /* Frameworks */,
@@ -260,9 +260,9 @@
 			dependencies = (
 				9F221699261DC73E0031B035 /* PBXTargetDependency */,
 			);
-			name = InfiniteCollectionViewFlowLayoutTests;
+			name = StableCollectionViewLayoutTests;
 			productName = InfiniteCollectionViewFlowLayoutTests;
-			productReference = 9F221696261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests.xctest */;
+			productReference = 9F221696261DC73E0031B035 /* StableCollectionViewLayoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		9F2216AC261DC7630031B035 /* Example */ = {
@@ -305,7 +305,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9F221687261DC73E0031B035 /* Build configuration list for PBXProject "InfiniteCollectionViewFlowLayout" */;
+			buildConfigurationList = 9F221687261DC73E0031B035 /* Build configuration list for PBXProject "StableCollectionViewLayout" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -318,8 +318,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9F22168C261DC73E0031B035 /* InfiniteCollectionViewFlowLayout */,
-				9F221695261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests */,
+				9F22168C261DC73E0031B035 /* StableCollectionViewLayout */,
+				9F221695261DC73E0031B035 /* StableCollectionViewLayoutTests */,
 				9F2216AC261DC7630031B035 /* Example */,
 			);
 		};
@@ -375,7 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F22169C261DC73E0031B035 /* InfiniteCollectionViewFlowLayoutTests.swift in Sources */,
+				9F22169C261DC73E0031B035 /* StableCollectionViewLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,12 +395,12 @@
 /* Begin PBXTargetDependency section */
 		9F221699261DC73E0031B035 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9F22168C261DC73E0031B035 /* InfiniteCollectionViewFlowLayout */;
+			target = 9F22168C261DC73E0031B035 /* StableCollectionViewLayout */;
 			targetProxy = 9F221698261DC73E0031B035 /* PBXContainerItemProxy */;
 		};
 		9F221705261DCA310031B035 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9F22168C261DC73E0031B035 /* InfiniteCollectionViewFlowLayout */;
+			target = 9F22168C261DC73E0031B035 /* StableCollectionViewLayout */;
 			targetProxy = 9F221704261DCA310031B035 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -556,14 +556,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = InfiniteCollectionViewFlowLayout/Info.plist;
+				INFOPLIST_FILE = StableCollectionViewLayout/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.InfiniteCollectionViewFlowLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.StableCollectionViewLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -581,14 +581,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = InfiniteCollectionViewFlowLayout/Info.plist;
+				INFOPLIST_FILE = StableCollectionViewLayout/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.InfiniteCollectionViewFlowLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.StableCollectionViewLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -601,13 +601,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InfiniteCollectionViewFlowLayoutTests/Info.plist;
+				INFOPLIST_FILE = StableCollectionViewLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.InfiniteCollectionViewFlowLayoutTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.StableCollectionViewLayoutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -619,13 +619,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InfiniteCollectionViewFlowLayoutTests/Info.plist;
+				INFOPLIST_FILE = StableCollectionViewLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.InfiniteCollectionViewFlowLayoutTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.StableCollectionViewLayoutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -673,7 +673,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9F221687261DC73E0031B035 /* Build configuration list for PBXProject "InfiniteCollectionViewFlowLayout" */ = {
+		9F221687261DC73E0031B035 /* Build configuration list for PBXProject "StableCollectionViewLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9F22169F261DC73E0031B035 /* Debug */,
@@ -682,7 +682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F2216A1261DC73E0031B035 /* Build configuration list for PBXNativeTarget "InfiniteCollectionViewFlowLayout" */ = {
+		9F2216A1261DC73E0031B035 /* Build configuration list for PBXNativeTarget "StableCollectionViewLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9F2216A2261DC73E0031B035 /* Debug */,
@@ -691,7 +691,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F2216A4261DC73E0031B035 /* Build configuration list for PBXNativeTarget "InfiniteCollectionViewFlowLayoutTests" */ = {
+		9F2216A4261DC73E0031B035 /* Build configuration list for PBXNativeTarget "StableCollectionViewLayoutTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9F2216A5261DC73E0031B035 /* Debug */,

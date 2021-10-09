@@ -17,7 +17,7 @@
                BlueprintIdentifier = "9F2216AC261DC7630031B035"
                BuildableName = "Example.app"
                BlueprintName = "Example"
-               ReferencedContainer = "container:InfiniteCollectionViewFlowLayout.xcodeproj">
+               ReferencedContainer = "container:StableCollectionViewLayout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "9F2216AC261DC7630031B035"
             BuildableName = "Example.app"
             BlueprintName = "Example"
-            ReferencedContainer = "container:InfiniteCollectionViewFlowLayout.xcodeproj">
+            ReferencedContainer = "container:StableCollectionViewLayout.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,7 +71,7 @@
             BlueprintIdentifier = "9F2216AC261DC7630031B035"
             BuildableName = "Example.app"
             BlueprintName = "Example"
-            ReferencedContainer = "container:InfiniteCollectionViewFlowLayout.xcodeproj">
+            ReferencedContainer = "container:StableCollectionViewLayout.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

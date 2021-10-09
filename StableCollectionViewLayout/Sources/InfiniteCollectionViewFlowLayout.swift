@@ -1,5 +1,5 @@
 //
-//  InfiniteCollectionViewFlowLayout.swift
+//  StableCollectionViewLayout.swift
 //  EndlessCollectionViewDemo
 //
 //  Created by Anton Malygin on 17.02.2021.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class InfiniteCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAttributesProvider {
+public class StableCollectionViewLayout: UICollectionViewFlowLayout, LayoutAttributesProvider {
     /// If true then `contentOffset` will adjust when the collection view is updated (batchUpdate, insert, delete or reload).
     /// Default is true
     public var enableAutomaticContentOffsetAdjustment = true
@@ -84,7 +84,7 @@ public class InfiniteCollectionViewFlowLayout: UICollectionViewFlowLayout, Layou
     }
 }
 
-extension InfiniteCollectionViewFlowLayout: CollectionViewDataProvider {
+extension StableCollectionViewLayout: CollectionViewDataProvider {
     
     public var indexPathsForVisibleItems: [IndexPath] {
         collectionView?.indexPathsForVisibleItems ?? []
