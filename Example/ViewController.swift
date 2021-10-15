@@ -13,8 +13,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var rowsPerSection: Int = 1
     var scrollDirection: UICollectionView.ScrollDirection = .vertical
     
-    private lazy var layout: StableCollectionViewLayout = {
-        let layout = StableCollectionViewLayout()
+    private lazy var layout: StableCollectionViewFlowLayout = {
+        let layout = StableCollectionViewFlowLayout()
         layout.scrollDirection = scrollDirection
         layout.minimumInteritemSpacing = 1
         return layout

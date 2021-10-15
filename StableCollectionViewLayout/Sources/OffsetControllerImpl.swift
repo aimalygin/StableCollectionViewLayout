@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 public class OffsetControllerImpl: OffsetController {
+    
+    public var enableAutomaticContentOffsetAdjustment = true
+    
     private weak var layoutDataSource: LayoutAttributesProvider?
     private weak var collectionDataSource: CollectionViewDataProvider?
     
@@ -17,43 +20,60 @@ public class OffsetControllerImpl: OffsetController {
     private let insertCalculator: InsertVisibleStateCalculator
     private let deleteCalculator: DeleteVisibleStateCalculator
     
-    public var scrollDirection: UICollectionView.ScrollDirection
-    public var previousVisibleAttributes: [IndexPath: CGRect] = [:]
+    private var previousVisibleAttributes: [IndexPath: CGRect] = [:]
+    private var offset: CGPoint?
     
     init(
         layoutDataSource: LayoutAttributesProvider,
-        collectionDataSource: CollectionViewDataProvider?,
-        scrollDirection: UICollectionView.ScrollDirection
+        collectionDataSource: CollectionViewDataProvider?
     ) {
         self.layoutDataSource = layoutDataSource
         self.collectionDataSource = collectionDataSource
-        self.scrollDirection = scrollDirection
         
         self.insertCalculator = InsertVisibleStateCalculator()
         self.deleteCalculator = DeleteVisibleStateCalculator()
     }
     
-    public func refreshVisibleAttributes() {
-        refreshVisibleState()
+    public func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
+        guard
+            let collectionDataSource = collectionDataSource, enableAutomaticContentOffsetAdjustment else {
+                return
+        }
         
-        guard let collectionDataSource = collectionDataSource,
-              let layoutDataSource = layoutDataSource else {
+        let previousContentOffset = collectionDataSource.contentOffset
+        let diff = offsetDifference(
+            for: updateItems.map({ CollectionViewUpdateItem(item: $0) })
+        )
+        guard diff.x != 0 || diff.y != 0 else {
             return
         }
-        let visibleCache = collectionDataSource
-            .indexPathsForVisibleItems
-            .reduce(into: [IndexPath: CGRect](), { seed, indexPath in
-                seed[indexPath] = layoutDataSource.layoutAttributesForItem(at: indexPath)?.frame ?? .zero
-            })
-        previousVisibleAttributes = visibleCache
+        offset = CGPoint(x: previousContentOffset.x + diff.x,
+                         y: previousContentOffset.y + diff.y)
     }
     
-    public func offsetDifference(for updates: [CollectionViewUpdateItem]) -> CGFloat {
+    public func resetOffset() {
+        offset = nil
+    }
+    
+    public func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
+        if !context.invalidateEverything {
+            refreshVisibleAttributes()
+        }
+    }
+    
+    public func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+        guard let offset = offset else {
+            return proposedContentOffset
+        }
+        return offset
+    }
+    
+    private func offsetDifference(for updates: [CollectionViewUpdateItem]) -> CGPoint {
         
         let isInitialLoading: Bool = visibleState.bottom.row == -Int.max &&
             visibleState.top.row == Int.max
         guard !isInitialLoading else {
-            return 0
+            return .zero
         }
         
         let previousVisibleFrame = previousVisibleAttributes[visibleState.currentTargetIndexPath] ?? .zero        
@@ -83,6 +103,21 @@ public class OffsetControllerImpl: OffsetController {
         return calculatedOffsetDiff
     }
     
+    private func refreshVisibleAttributes() {
+        refreshVisibleState()
+        
+        guard let collectionDataSource = collectionDataSource,
+              let layoutDataSource = layoutDataSource else {
+            return
+        }
+        let visibleCache = collectionDataSource
+            .indexPathsForVisibleItems
+            .reduce(into: [IndexPath: CGRect](), { seed, indexPath in
+                seed[indexPath] = layoutDataSource.layoutAttributesForItem(at: indexPath)?.frame ?? .zero
+            })
+        previousVisibleAttributes = visibleCache
+    }
+    
     private func refreshVisibleState() {
         let indexPathsVisible = collectionDataSource?
             .indexPathsForVisibleItems
@@ -109,8 +144,7 @@ public class OffsetControllerImpl: OffsetController {
         }
     }
     
-    private func diff(fromPreviousFrame previous: CGRect, new: CGRect) -> CGFloat {
-        scrollDirection == .vertical ? new.minY - previous.minY : new.minX - previous.minX
+    private func diff(fromPreviousFrame previous: CGRect, new: CGRect) -> CGPoint {
+        CGPoint(x: new.minX - previous.minX, y: new.minY - previous.minY)
     }
 }
-

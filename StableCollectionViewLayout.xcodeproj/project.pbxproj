@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040CC34D27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CC34C27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift */; };
 		045B242226EFD32300B9364B /* AbstractVisibleStateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B242126EFD32300B9364B /* AbstractVisibleStateCalculator.swift */; };
 		045B242426EFFC2A00B9364B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B242326EFFC2A00B9364B /* TableViewController.swift */; };
 		9F221697261DC73E0031B035 /* StableCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */; };
@@ -19,7 +20,7 @@
 		9F2216BC261DC7640031B035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2216BA261DC7640031B035 /* LaunchScreen.storyboard */; };
 		9F2216CF261DC8040031B035 /* VisibleIndexesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216C9261DC8030031B035 /* VisibleIndexesState.swift */; };
 		9F2216D0261DC8040031B035 /* OffsetControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216CA261DC8030031B035 /* OffsetControllerImpl.swift */; };
-		9F2216D2261DC8040031B035 /* InfiniteCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216CC261DC8040031B035 /* InfiniteCollectionViewFlowLayout.swift */; };
+		9F2216D2261DC8040031B035 /* StableCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216CC261DC8040031B035 /* StableCollectionViewLayout.swift */; };
 		9F2216D3261DC8040031B035 /* CollectionViewUpdateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216CD261DC8040031B035 /* CollectionViewUpdateItem.swift */; };
 		9F2216DC261DC8100031B035 /* LayoutAttributesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216D7261DC8100031B035 /* LayoutAttributesProvider.swift */; };
 		9F2216DD261DC8100031B035 /* OffsetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216D8261DC8100031B035 /* OffsetController.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		040CC34C27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		045B242126EFD32300B9364B /* AbstractVisibleStateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractVisibleStateCalculator.swift; sourceTree = "<group>"; };
 		045B242326EFFC2A00B9364B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StableCollectionViewLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +83,7 @@
 		9F2216BD261DC7640031B035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F2216C9261DC8030031B035 /* VisibleIndexesState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibleIndexesState.swift; sourceTree = "<group>"; };
 		9F2216CA261DC8030031B035 /* OffsetControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetControllerImpl.swift; sourceTree = "<group>"; };
-		9F2216CC261DC8040031B035 /* InfiniteCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		9F2216CC261DC8040031B035 /* StableCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StableCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9F2216CD261DC8040031B035 /* CollectionViewUpdateItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewUpdateItem.swift; sourceTree = "<group>"; };
 		9F2216D7261DC8100031B035 /* LayoutAttributesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAttributesProvider.swift; sourceTree = "<group>"; };
 		9F2216D8261DC8100031B035 /* OffsetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetController.swift; sourceTree = "<group>"; };
@@ -178,7 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				9F2216CD261DC8040031B035 /* CollectionViewUpdateItem.swift */,
-				9F2216CC261DC8040031B035 /* InfiniteCollectionViewFlowLayout.swift */,
+				9F2216CC261DC8040031B035 /* StableCollectionViewLayout.swift */,
+				040CC34C27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift */,
 				9F2216CA261DC8030031B035 /* OffsetControllerImpl.swift */,
 				9F2216C9261DC8030031B035 /* VisibleIndexesState.swift */,
 				9F2216C7261DC7AF0031B035 /* Protocols */,
@@ -360,11 +363,12 @@
 				9F2216DF261DC8100031B035 /* VisibleStateCalculator.swift in Sources */,
 				9F2216CF261DC8040031B035 /* VisibleIndexesState.swift in Sources */,
 				9F2216EB261DC8720031B035 /* DeleteVisibleStateCalculator.swift in Sources */,
+				040CC34D27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift in Sources */,
 				9F2216DC261DC8100031B035 /* LayoutAttributesProvider.swift in Sources */,
 				9F2216D3261DC8040031B035 /* CollectionViewUpdateItem.swift in Sources */,
 				045B242226EFD32300B9364B /* AbstractVisibleStateCalculator.swift in Sources */,
 				9F2216DD261DC8100031B035 /* OffsetController.swift in Sources */,
-				9F2216D2261DC8040031B035 /* InfiniteCollectionViewFlowLayout.swift in Sources */,
+				9F2216D2261DC8040031B035 /* StableCollectionViewLayout.swift in Sources */,
 				9F2216E9261DC8720031B035 /* InsertVisibleStateCalculator.swift in Sources */,
 				9F2216D0261DC8040031B035 /* OffsetControllerImpl.swift in Sources */,
 				9F2216DE261DC8100031B035 /* CollectionViewDataProvider.swift in Sources */,
@@ -644,7 +648,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.InfiniteCollectionFLowLayout.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.StableCollectionViewLayout.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -663,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.InfiniteCollectionFLowLayout.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sofatech.StableCollectionViewLayout.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

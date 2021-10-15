@@ -9,7 +9,10 @@ import Foundation
 import UIKit
 
 public protocol OffsetController {
-    var scrollDirection: UICollectionView.ScrollDirection { get set }
-    func refreshVisibleAttributes()
-    func offsetDifference(for updates: [CollectionViewUpdateItem]) -> CGFloat
+    func resetOffset()
+    func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem])
+    func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint
+    func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext)
+    
+    var enableAutomaticContentOffsetAdjustment: Bool { get set }
 }

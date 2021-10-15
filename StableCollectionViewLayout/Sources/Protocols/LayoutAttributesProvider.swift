@@ -39,7 +39,5 @@ public protocol LayoutAttributesProvider: AnyObject {
         at decorationIndexPath: IndexPath
     ) -> UICollectionViewLayoutAttributes?
     
-    func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
-    
-    var scrollDirection: UICollectionView.ScrollDirection { get }
+    func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?    
 }
