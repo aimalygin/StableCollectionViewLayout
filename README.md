@@ -12,12 +12,10 @@ Like this
 
 ## Usage
 
-Firstly, import `StableCollectionViewLayout`
+You should just create and pass `StableCollectionViewFlowLayout` to `UICollectionView` init
 ```swift
 import StableCollectionViewLayout
-```
 
-Then you should just create and pass `StableCollectionViewLayout` to `UICollectionView` init
-```swift
-UICollectionView(frame: .zero, collectionViewLayout: StableCollectionViewLayout())
+UICollectionView(frame: .zero, collectionViewLayout: StableCollectionViewFlowLayout())
 ```
+Also, you can create the own subclass of `StableCollectionViewLayout` and use it.
