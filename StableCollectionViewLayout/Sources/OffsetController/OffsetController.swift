@@ -1,6 +1,6 @@
 //
 //  OffsetController.swift
-//  EndlessCollectionViewDemo
+//  StableCollectionViewLayout
 //
 //  Created by Anton Malygin on 07.04.2021.
 //
@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 
 public protocol OffsetController {
+    func prepare(forCollectionViewUpdates updateItems: [CollectionViewUpdateItem])
+    
     func resetOffset()
-    func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem])
+    
     func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint
-    func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext)
+    
+    func refreshVisibleAttributes()
     
     var enableAutomaticContentOffsetAdjustment: Bool { get set }
 }

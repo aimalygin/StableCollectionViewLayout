@@ -1,6 +1,6 @@
 //
 //  LayoutAttributesProvider.swift
-//  EndlessCollectionViewDemo
+//  StableCollectionViewLayout
 //
 //  Created by Anton Malygin on 06.04.2021.
 //

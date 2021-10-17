@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-@testable import InfiniteCollectionViewFlowLayout
+@testable import StableCollectionViewLayout
 
 class LayoutAttributesProviderMock: LayoutAttributesProvider {
     

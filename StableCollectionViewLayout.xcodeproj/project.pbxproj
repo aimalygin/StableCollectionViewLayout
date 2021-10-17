@@ -8,10 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		040CC34D27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CC34C27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift */; };
-		045B242226EFD32300B9364B /* AbstractVisibleStateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B242126EFD32300B9364B /* AbstractVisibleStateCalculator.swift */; };
 		045B242426EFFC2A00B9364B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B242326EFFC2A00B9364B /* TableViewController.swift */; };
+		04BBD0FF271C39C50018DD00 /* OffsetControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD0FE271C39C50018DD00 /* OffsetControllerTests.swift */; };
+		04BBD103271C3A250018DD00 /* LayoutAttributesProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD101271C3A240018DD00 /* LayoutAttributesProviderMock.swift */; };
+		04BBD104271C3A250018DD00 /* CollectionViewDataProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD102271C3A240018DD00 /* CollectionViewDataProviderMock.swift */; };
+		04BBD106271C6E2F0018DD00 /* VisibleIndexesStateControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD105271C6E2F0018DD00 /* VisibleIndexesStateControllerTests.swift */; };
+		04BBD108271C75C20018DD00 /* IndexPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD107271C75C20018DD00 /* IndexPath+Extension.swift */; };
+		04BBD10A271C7D1C0018DD00 /* VisibleIndexesStateControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD109271C7D1C0018DD00 /* VisibleIndexesStateControllerImpl.swift */; };
+		04BBD10C271C881C0018DD00 /* VisibleIndexesStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD10B271C881C0018DD00 /* VisibleIndexesStateTests.swift */; };
+		04BBD10F271C8EEC0018DD00 /* VisibleIndexesStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD10E271C8EEC0018DD00 /* VisibleIndexesStateController.swift */; };
+		04BBD111271C8FED0018DD00 /* VisibleIndexesStateControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD110271C8FED0018DD00 /* VisibleIndexesStateControllerMock.swift */; };
+		04BBD113271C91570018DD00 /* CollectionViewUpdateItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD112271C91570018DD00 /* CollectionViewUpdateItemTests.swift */; };
 		9F221697261DC73E0031B035 /* StableCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */; };
-		9F22169C261DC73E0031B035 /* StableCollectionViewLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22169B261DC73E0031B035 /* StableCollectionViewLayoutTests.swift */; };
 		9F22169E261DC73E0031B035 /* StableCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F221690261DC73E0031B035 /* StableCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F2216B0261DC7630031B035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216AF261DC7630031B035 /* AppDelegate.swift */; };
 		9F2216B4261DC7630031B035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216B3261DC7630031B035 /* ViewController.swift */; };
@@ -25,9 +33,6 @@
 		9F2216DC261DC8100031B035 /* LayoutAttributesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216D7261DC8100031B035 /* LayoutAttributesProvider.swift */; };
 		9F2216DD261DC8100031B035 /* OffsetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216D8261DC8100031B035 /* OffsetController.swift */; };
 		9F2216DE261DC8100031B035 /* CollectionViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216D9261DC8100031B035 /* CollectionViewDataProvider.swift */; };
-		9F2216DF261DC8100031B035 /* VisibleStateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216DA261DC8100031B035 /* VisibleStateCalculator.swift */; };
-		9F2216E9261DC8720031B035 /* InsertVisibleStateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216E4261DC8720031B035 /* InsertVisibleStateCalculator.swift */; };
-		9F2216EB261DC8720031B035 /* DeleteVisibleStateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216E6261DC8720031B035 /* DeleteVisibleStateCalculator.swift */; };
 		9F2216FA261DC9BB0031B035 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2216F9261DC9BB0031B035 /* DemoCollectionViewCell.swift */; };
 		9F221702261DCA310031B035 /* StableCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */; };
 		9F221703261DCA310031B035 /* StableCollectionViewLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -66,13 +71,21 @@
 
 /* Begin PBXFileReference section */
 		040CC34C27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		045B242126EFD32300B9364B /* AbstractVisibleStateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractVisibleStateCalculator.swift; sourceTree = "<group>"; };
 		045B242326EFFC2A00B9364B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		04BBD0FE271C39C50018DD00 /* OffsetControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetControllerTests.swift; sourceTree = "<group>"; };
+		04BBD101271C3A240018DD00 /* LayoutAttributesProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAttributesProviderMock.swift; sourceTree = "<group>"; };
+		04BBD102271C3A240018DD00 /* CollectionViewDataProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataProviderMock.swift; sourceTree = "<group>"; };
+		04BBD105271C6E2F0018DD00 /* VisibleIndexesStateControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleIndexesStateControllerTests.swift; sourceTree = "<group>"; };
+		04BBD107271C75C20018DD00 /* IndexPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+Extension.swift"; sourceTree = "<group>"; };
+		04BBD109271C7D1C0018DD00 /* VisibleIndexesStateControllerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleIndexesStateControllerImpl.swift; sourceTree = "<group>"; };
+		04BBD10B271C881C0018DD00 /* VisibleIndexesStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleIndexesStateTests.swift; sourceTree = "<group>"; };
+		04BBD10E271C8EEC0018DD00 /* VisibleIndexesStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleIndexesStateController.swift; sourceTree = "<group>"; };
+		04BBD110271C8FED0018DD00 /* VisibleIndexesStateControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleIndexesStateControllerMock.swift; sourceTree = "<group>"; };
+		04BBD112271C91570018DD00 /* CollectionViewUpdateItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewUpdateItemTests.swift; sourceTree = "<group>"; };
 		9F22168D261DC73E0031B035 /* StableCollectionViewLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StableCollectionViewLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F221690261DC73E0031B035 /* StableCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StableCollectionViewLayout.h; sourceTree = "<group>"; };
 		9F221691261DC73E0031B035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F221696261DC73E0031B035 /* StableCollectionViewLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StableCollectionViewLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F22169B261DC73E0031B035 /* StableCollectionViewLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableCollectionViewLayoutTests.swift; sourceTree = "<group>"; };
 		9F22169D261DC73E0031B035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F2216AD261DC7630031B035 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2216AF261DC7630031B035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,9 +101,6 @@
 		9F2216D7261DC8100031B035 /* LayoutAttributesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAttributesProvider.swift; sourceTree = "<group>"; };
 		9F2216D8261DC8100031B035 /* OffsetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetController.swift; sourceTree = "<group>"; };
 		9F2216D9261DC8100031B035 /* CollectionViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataProvider.swift; sourceTree = "<group>"; };
-		9F2216DA261DC8100031B035 /* VisibleStateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibleStateCalculator.swift; sourceTree = "<group>"; };
-		9F2216E4261DC8720031B035 /* InsertVisibleStateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertVisibleStateCalculator.swift; sourceTree = "<group>"; };
-		9F2216E6261DC8720031B035 /* DeleteVisibleStateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteVisibleStateCalculator.swift; sourceTree = "<group>"; };
 		9F2216F9261DC9BB0031B035 /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +140,26 @@
 			path = OffsetController;
 			sourceTree = "<group>";
 		};
+		04BBD100271C39D90018DD00 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				04BBD102271C3A240018DD00 /* CollectionViewDataProviderMock.swift */,
+				04BBD101271C3A240018DD00 /* LayoutAttributesProviderMock.swift */,
+				04BBD110271C8FED0018DD00 /* VisibleIndexesStateControllerMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		04BBD10D271C8E2E0018DD00 /* VisibleIndexesStateController */ = {
+			isa = PBXGroup;
+			children = (
+				9F2216C9261DC8030031B035 /* VisibleIndexesState.swift */,
+				04BBD10E271C8EEC0018DD00 /* VisibleIndexesStateController.swift */,
+				04BBD109271C7D1C0018DD00 /* VisibleIndexesStateControllerImpl.swift */,
+			);
+			path = VisibleIndexesStateController;
+			sourceTree = "<group>";
+		};
 		9F221683261DC73E0031B035 = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +194,11 @@
 		9F22169A261DC73E0031B035 /* StableCollectionViewLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F22169B261DC73E0031B035 /* StableCollectionViewLayoutTests.swift */,
+				04BBD0FE271C39C50018DD00 /* OffsetControllerTests.swift */,
+				04BBD105271C6E2F0018DD00 /* VisibleIndexesStateControllerTests.swift */,
+				04BBD10B271C881C0018DD00 /* VisibleIndexesStateTests.swift */,
+				04BBD112271C91570018DD00 /* CollectionViewUpdateItemTests.swift */,
+				04BBD100271C39D90018DD00 /* Mock */,
 				9F22169D261DC73E0031B035 /* Info.plist */,
 			);
 			path = StableCollectionViewLayoutTests;
@@ -193,22 +227,11 @@
 				9F2216D7261DC8100031B035 /* LayoutAttributesProvider.swift */,
 				9F2216D9261DC8100031B035 /* CollectionViewDataProvider.swift */,
 				9F2216CD261DC8040031B035 /* CollectionViewUpdateItem.swift */,
-				9F2216C9261DC8030031B035 /* VisibleIndexesState.swift */,
+				04BBD107271C75C20018DD00 /* IndexPath+Extension.swift */,
+				04BBD10D271C8E2E0018DD00 /* VisibleIndexesStateController */,
 				04BBD0FD271C37640018DD00 /* OffsetController */,
-				9F2216C6261DC7A30031B035 /* VisibleStateCalculator */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		9F2216C6261DC7A30031B035 /* VisibleStateCalculator */ = {
-			isa = PBXGroup;
-			children = (
-				9F2216DA261DC8100031B035 /* VisibleStateCalculator.swift */,
-				9F2216E6261DC8720031B035 /* DeleteVisibleStateCalculator.swift */,
-				9F2216E4261DC8720031B035 /* InsertVisibleStateCalculator.swift */,
-				045B242126EFD32300B9364B /* AbstractVisibleStateCalculator.swift */,
-			);
-			path = VisibleStateCalculator;
 			sourceTree = "<group>";
 		};
 		9F221701261DCA310031B035 /* Frameworks */ = {
@@ -360,18 +383,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F2216DF261DC8100031B035 /* VisibleStateCalculator.swift in Sources */,
 				9F2216CF261DC8040031B035 /* VisibleIndexesState.swift in Sources */,
-				9F2216EB261DC8720031B035 /* DeleteVisibleStateCalculator.swift in Sources */,
 				040CC34D27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift in Sources */,
 				9F2216DC261DC8100031B035 /* LayoutAttributesProvider.swift in Sources */,
 				9F2216D3261DC8040031B035 /* CollectionViewUpdateItem.swift in Sources */,
-				045B242226EFD32300B9364B /* AbstractVisibleStateCalculator.swift in Sources */,
 				9F2216DD261DC8100031B035 /* OffsetController.swift in Sources */,
 				9F2216D2261DC8040031B035 /* StableCollectionViewLayout.swift in Sources */,
-				9F2216E9261DC8720031B035 /* InsertVisibleStateCalculator.swift in Sources */,
 				9F2216D0261DC8040031B035 /* OffsetControllerImpl.swift in Sources */,
+				04BBD10F271C8EEC0018DD00 /* VisibleIndexesStateController.swift in Sources */,
+				04BBD108271C75C20018DD00 /* IndexPath+Extension.swift in Sources */,
 				9F2216DE261DC8100031B035 /* CollectionViewDataProvider.swift in Sources */,
+				04BBD10A271C7D1C0018DD00 /* VisibleIndexesStateControllerImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +401,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F22169C261DC73E0031B035 /* StableCollectionViewLayoutTests.swift in Sources */,
+				04BBD103271C3A250018DD00 /* LayoutAttributesProviderMock.swift in Sources */,
+				04BBD111271C8FED0018DD00 /* VisibleIndexesStateControllerMock.swift in Sources */,
+				04BBD10C271C881C0018DD00 /* VisibleIndexesStateTests.swift in Sources */,
+				04BBD104271C3A250018DD00 /* CollectionViewDataProviderMock.swift in Sources */,
+				04BBD106271C6E2F0018DD00 /* VisibleIndexesStateControllerTests.swift in Sources */,
+				04BBD0FF271C39C50018DD00 /* OffsetControllerTests.swift in Sources */,
+				04BBD113271C91570018DD00 /* CollectionViewUpdateItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

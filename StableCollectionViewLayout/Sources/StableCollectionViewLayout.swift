@@ -1,6 +1,6 @@
 //
 //  StableCollectionViewLayout.swift
-//  EndlessCollectionViewDemo
+//  StableCollectionViewLayout
 //
 //  Created by Anton Malygin on 17.02.2021.
 //
@@ -40,7 +40,9 @@ public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttribute
         defer {
             super.prepare(forCollectionViewUpdates: updateItems)
         }
-        offsetController.prepare(forCollectionViewUpdates: updateItems)
+        offsetController.prepare(
+            forCollectionViewUpdates: updateItems.map({ CollectionViewUpdateItem(item: $0) })
+        )
     }
     
     override open func finalizeCollectionViewUpdates() {
@@ -49,7 +51,9 @@ public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttribute
     }
     
     public override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
-        offsetController.invalidateLayout(with: context)
+        if !context.invalidateEverything {
+            offsetController.refreshVisibleAttributes()
+        }
         super.invalidateLayout(with: context)
     }
             

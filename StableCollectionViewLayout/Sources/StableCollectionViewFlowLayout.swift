@@ -40,7 +40,9 @@ public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutA
         defer {
             super.prepare(forCollectionViewUpdates: updateItems)
         }
-        offsetController.prepare(forCollectionViewUpdates: updateItems)
+        offsetController.prepare(
+            forCollectionViewUpdates: updateItems.map({ CollectionViewUpdateItem(item: $0) })
+        )
     }
     
     override open func finalizeCollectionViewUpdates() {
@@ -49,7 +51,9 @@ public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutA
     }
     
     public override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
-        offsetController.invalidateLayout(with: context)
+        if !context.invalidateEverything {
+            offsetController.refreshVisibleAttributes()
+        }
         super.invalidateLayout(with: context)
     }
             

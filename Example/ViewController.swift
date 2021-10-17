@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  EndlessCollectionViewDemo
+//  Example
 //
 //  Created by Anton Malygin on 17.02.2021.
 //

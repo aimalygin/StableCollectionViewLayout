@@ -7,9 +7,10 @@
 
 import Foundation
 import UIKit
-@testable import InfiniteCollectionViewFlowLayout
+@testable import StableCollectionViewLayout
 
 class CollectionViewDataProviderMock: CollectionViewDataProvider {
+    var contentOffset: CGPoint = .zero
     
     var indexPathsForVisibleItems: [IndexPath] = []
     
