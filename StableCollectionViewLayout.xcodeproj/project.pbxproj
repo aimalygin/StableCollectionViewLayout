@@ -121,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04BBD0FD271C37640018DD00 /* OffsetController */ = {
+			isa = PBXGroup;
+			children = (
+				9F2216D8261DC8100031B035 /* OffsetController.swift */,
+				9F2216CA261DC8030031B035 /* OffsetControllerImpl.swift */,
+			);
+			path = OffsetController;
+			sourceTree = "<group>";
+		};
 		9F221683261DC73E0031B035 = {
 			isa = PBXGroup;
 			children = (
@@ -179,36 +188,27 @@
 		9F2216C4261DC7840031B035 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9F2216CD261DC8040031B035 /* CollectionViewUpdateItem.swift */,
 				9F2216CC261DC8040031B035 /* StableCollectionViewLayout.swift */,
 				040CC34C27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift */,
-				9F2216CA261DC8030031B035 /* OffsetControllerImpl.swift */,
+				9F2216D7261DC8100031B035 /* LayoutAttributesProvider.swift */,
+				9F2216D9261DC8100031B035 /* CollectionViewDataProvider.swift */,
+				9F2216CD261DC8040031B035 /* CollectionViewUpdateItem.swift */,
 				9F2216C9261DC8030031B035 /* VisibleIndexesState.swift */,
-				9F2216C7261DC7AF0031B035 /* Protocols */,
-				9F2216C6261DC7A30031B035 /* AttributesFinder */,
+				04BBD0FD271C37640018DD00 /* OffsetController */,
+				9F2216C6261DC7A30031B035 /* VisibleStateCalculator */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		9F2216C6261DC7A30031B035 /* AttributesFinder */ = {
+		9F2216C6261DC7A30031B035 /* VisibleStateCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				9F2216DA261DC8100031B035 /* VisibleStateCalculator.swift */,
 				9F2216E6261DC8720031B035 /* DeleteVisibleStateCalculator.swift */,
 				9F2216E4261DC8720031B035 /* InsertVisibleStateCalculator.swift */,
 				045B242126EFD32300B9364B /* AbstractVisibleStateCalculator.swift */,
 			);
-			path = AttributesFinder;
-			sourceTree = "<group>";
-		};
-		9F2216C7261DC7AF0031B035 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				9F2216DA261DC8100031B035 /* VisibleStateCalculator.swift */,
-				9F2216D9261DC8100031B035 /* CollectionViewDataProvider.swift */,
-				9F2216D7261DC8100031B035 /* LayoutAttributesProvider.swift */,
-				9F2216D8261DC8100031B035 /* OffsetController.swift */,
-			);
-			path = Protocols;
+			path = VisibleStateCalculator;
 			sourceTree = "<group>";
 		};
 		9F221701261DCA310031B035 /* Frameworks */ = {

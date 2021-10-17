@@ -99,7 +99,7 @@ public class OffsetControllerImpl: OffsetController {
         
         let newVisibleFrame = layoutDataSource?
             .layoutAttributesForItem(at: visibleState.currentTargetIndexPath)?.frame ?? .zero
-        let calculatedOffsetDiff = diff(fromPreviousFrame: previousVisibleFrame, new: newVisibleFrame)
+        let calculatedOffsetDiff = diff(from: previousVisibleFrame, new: newVisibleFrame)
         return calculatedOffsetDiff
     }
     
@@ -144,7 +144,7 @@ public class OffsetControllerImpl: OffsetController {
         }
     }
     
-    private func diff(fromPreviousFrame previous: CGRect, new: CGRect) -> CGPoint {
+    private func diff(from previous: CGRect, new: CGRect) -> CGPoint {
         CGPoint(x: new.minX - previous.minX, y: new.minY - previous.minY)
     }
 }
