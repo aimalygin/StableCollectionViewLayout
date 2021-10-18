@@ -1,0 +1,14 @@
+# references:
+# * https://www.objc.io/issues/6-build-tools/travis-ci/
+# * https://github.com/supermarin/xcpretty#usage
+
+osx_image: xcode12.5
+language: swift
+xcode_destination: platform=iOS Simulator,OS=14.5,name=iPhone 11
+xcode_project: StableCollectionViewLayout.xcodeproj # path to your xcodeproj folder
+xcode_scheme: StableCollectionViewLayoutTests
+# cache: cocoapods
+# podfile: Example/Podfile
+# before_install:
+# - gem install cocoapods # Since Travis is not always on latest version
+# - pod install --project-directory=Example

@@ -1,3 +1,25 @@
+
+<p align="center">
+    <a href="https://api.travis-ci.org/aimalygin/StableCollectionViewLayout">
+        <img src="https://api.travis-ci.org/aimalygin/StableCollectionViewLayout.svg"
+             alt="Build Status">
+    </a>
+    <a href="https://github.com/aimalygin/StableCollectionViewLayout">
+        <img src="https://img.shields.io/badge/cocoapods-latest-green"
+             alt="Pods Version">
+    </a>
+    <a href="https://github.com/aimalygin/StableCollectionViewLayout">
+        <img src="https://img.shields.io/badge/platform-ios-lightgrey"
+             alt="Platforms">
+    </a>
+    <a href="https://github.com/aimalygin/StableCollectionViewLayout">
+        <img src="https://img.shields.io/badge/spm-compatible-green"
+             alt="SPM Compatible">
+    </a>
+</p>
+
+----------------
+
 # StableCollectionViewLayout
 
 This layout adjusts a content offset if the collection view is updated. You can insert, delete or reload items and `StableCollectionViewLayout` will take care of the content offset.
@@ -19,3 +41,33 @@ import StableCollectionViewLayout
 UICollectionView(frame: .zero, collectionViewLayout: StableCollectionViewFlowLayout())
 ```
 Also, you can create the own subclass of `StableCollectionViewLayout` and use it.
+
+## Installation
+
+### CocoaPods
+
+The preferred installation method is with [CocoaPods](https://cocoapods.org). Add the following to your `Podfile`:
+
+```ruby
+pod 'StableCollectionViewLayout', '~> 1.0.0'
+```
+
+### Carthage
+
+For [Carthage](https://github.com/Carthage/Carthage), add the following to your `Cartfile`:
+
+```ogdl
+github "aimalygin/StableCollectionViewLayout" ~> 1.0.0
+```
+
+### Swift Package Manager
+
+For [Swift Package Manager](https://swift.org/package-manager/):
+
+```
+To integrate using Xcode:
+
+File -> Swift Packages -> Add Package Dependency
+
+Enter package URL: https://github.com/aimalygin/StableCollectionViewLayout, and select the latest release.
+```
