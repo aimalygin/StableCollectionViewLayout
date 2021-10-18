@@ -1,7 +1,7 @@
 
 <p align="center">
-    <a href="https://api.travis-ci.org/aimalygin/StableCollectionViewLayout">
-        <img src="https://api.travis-ci.org/aimalygin/StableCollectionViewLayout.svg"
+    <a href="https://app.travis-ci.com/aimalygin/StableCollectionViewLayout">
+        <img src="https://app.travis-ci.com/aimalygin/StableCollectionViewLayout.svg?branch=main"
              alt="Build Status">
     </a>
     <a href="https://github.com/aimalygin/StableCollectionViewLayout">
