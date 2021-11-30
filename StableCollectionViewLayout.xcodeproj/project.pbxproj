@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040CC34D27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CC34C27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift */; };
 		045B242426EFFC2A00B9364B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B242326EFFC2A00B9364B /* TableViewController.swift */; };
+		04751A8F2756B91100F14864 /* OffsetController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04751A8E2756B91100F14864 /* OffsetController+Extension.swift */; };
 		04BBD0FF271C39C50018DD00 /* OffsetControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD0FE271C39C50018DD00 /* OffsetControllerTests.swift */; };
 		04BBD103271C3A250018DD00 /* LayoutAttributesProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD101271C3A240018DD00 /* LayoutAttributesProviderMock.swift */; };
 		04BBD104271C3A250018DD00 /* CollectionViewDataProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBD102271C3A240018DD00 /* CollectionViewDataProviderMock.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		040CC34C27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		045B242326EFFC2A00B9364B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		04751A8E2756B91100F14864 /* OffsetController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OffsetController+Extension.swift"; sourceTree = "<group>"; };
 		04BBD0FE271C39C50018DD00 /* OffsetControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetControllerTests.swift; sourceTree = "<group>"; };
 		04BBD101271C3A240018DD00 /* LayoutAttributesProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAttributesProviderMock.swift; sourceTree = "<group>"; };
 		04BBD102271C3A240018DD00 /* CollectionViewDataProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataProviderMock.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				9F2216D8261DC8100031B035 /* OffsetController.swift */,
 				9F2216CA261DC8030031B035 /* OffsetControllerImpl.swift */,
+				04751A8E2756B91100F14864 /* OffsetController+Extension.swift */,
 			);
 			path = OffsetController;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04751A8F2756B91100F14864 /* OffsetController+Extension.swift in Sources */,
 				9F2216CF261DC8040031B035 /* VisibleIndexesState.swift in Sources */,
 				040CC34D27123CDE00A6F268 /* StableCollectionViewFlowLayout.swift in Sources */,
 				9F2216DC261DC8100031B035 /* LayoutAttributesProvider.swift in Sources */,

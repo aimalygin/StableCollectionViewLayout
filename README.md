@@ -1,7 +1,7 @@
 
 <p align="center">
-    <a href="https://app.travis-ci.com/aimalygin/StableCollectionViewLayout">
-        <img src="https://app.travis-ci.com/aimalygin/StableCollectionViewLayout.svg?branch=main"
+    <a href="https://app.bitrise.io/app/7728e287cc146a7f">
+        <img src="https://app.bitrise.io/app/7728e287cc146a7f/status.svg?token=hud0QzPtQQzeKyywD1RyCA&branch=main"
              alt="Build Status">
     </a>
     <a href="https://github.com/aimalygin/StableCollectionViewLayout">

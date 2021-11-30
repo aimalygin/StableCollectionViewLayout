@@ -10,7 +10,9 @@ import XCTest
 
 final class OffsetControllerTests: XCTestCase {
     private let layoutAttribute = LayoutAttributesProviderMock()
-    private let collectionViewDataProvider = CollectionViewDataProviderMock()
+    private let collectionViewDataProvider = CollectionViewDataProviderMock(
+        indexPathsForVisibleItems: [IndexPath(row: 0, section: 0)]
+    )
     private let visibleStateController = VisibleIndexesStateControllerMock()
     
     private lazy var sut = OffsetControllerImpl(
@@ -28,7 +30,7 @@ final class OffsetControllerTests: XCTestCase {
         sut.prepare(forCollectionViewUpdates: [CollectionViewUpdateItem.empty()])
         
         let result = sut.targetContentOffset(forProposedContentOffset: CGPoint.zero)
-        XCTAssertEqual(result, .zero)
+        XCTAssertNil(result)
     }
     
     func testTargetContentOffset_WhenDifferenceExists() throws {
@@ -41,24 +43,9 @@ final class OffsetControllerTests: XCTestCase {
                                         Env.targetVisibleAtrributes]
         sut.prepare(forCollectionViewUpdates: [CollectionViewUpdateItem.empty()])
         
-        let result = sut.targetContentOffset(forProposedContentOffset: CGPoint.zero)
+        let result = sut.targetContentOffset(forProposedContentOffset: CGPoint.zero)!
         let expected = Env.targetVisibleAtrributes.frame.minY - Env.sourceVisibleAtrributes.frame.minY
         XCTAssertEqual(result, CGPoint(x: 0, y: expected))
-    }
-    
-    func testTargetContentOffset_WhenDifferenceOffsetIsReseted() throws {
-        visibleStateController.state = Env.visibleState
-        layoutAttribute.attributes = [Env.visibleState.targetIndexPath:
-                                        Env.sourceVisibleAtrributes]
-        
-        sut.refreshVisibleAttributes()
-        layoutAttribute.attributes = [Env.visibleState.targetIndexPath:
-                                        Env.targetVisibleAtrributes]
-        sut.prepare(forCollectionViewUpdates: [CollectionViewUpdateItem.empty()])
-        sut.resetOffset()
-        
-        let result = sut.targetContentOffset(forProposedContentOffset: CGPoint.zero)
-        XCTAssertEqual(result, .zero)
     }
     
     func testTargetContentOffset_WhenEnableAutomaticContentOffsetAdjustmentIsFalse() throws {
@@ -73,7 +60,7 @@ final class OffsetControllerTests: XCTestCase {
         sut.prepare(forCollectionViewUpdates: [CollectionViewUpdateItem.empty()])
         
         let result = sut.targetContentOffset(forProposedContentOffset: CGPoint.zero)
-        XCTAssertEqual(result, .zero)
+        XCTAssertNil(result)
     }
     
     func testTargetContentOffset_WhenIsInitialLoading() throws {
@@ -87,7 +74,7 @@ final class OffsetControllerTests: XCTestCase {
         sut.prepare(forCollectionViewUpdates: [CollectionViewUpdateItem.empty()])
         
         let result = sut.targetContentOffset(forProposedContentOffset: CGPoint.zero)
-        XCTAssertEqual(result, .zero)
+        XCTAssertNil(result)
     }
 
 }

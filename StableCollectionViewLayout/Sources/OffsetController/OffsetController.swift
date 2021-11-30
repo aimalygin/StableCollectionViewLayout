@@ -10,10 +10,8 @@ import UIKit
 
 public protocol OffsetController {
     func prepare(forCollectionViewUpdates updateItems: [CollectionViewUpdateItem])
-    
-    func resetOffset()
-    
-    func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint
+        
+    func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint?
     
     func refreshVisibleAttributes()
     

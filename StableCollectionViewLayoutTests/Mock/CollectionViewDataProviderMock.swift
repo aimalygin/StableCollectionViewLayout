@@ -16,6 +16,10 @@ class CollectionViewDataProviderMock: CollectionViewDataProvider {
     
     var numberOfSections: Int = 0
     
+    init(indexPathsForVisibleItems: [IndexPath] = []) {
+        self.indexPathsForVisibleItems = indexPathsForVisibleItems
+    }
+    
     func numberOfItems(inSection section: Int) -> Int {
         return 0
     }

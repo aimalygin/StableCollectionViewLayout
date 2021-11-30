@@ -47,7 +47,7 @@ public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttribute
     
     override open func finalizeCollectionViewUpdates() {
         super.finalizeCollectionViewUpdates()
-        offsetController.resetOffset()
+        offsetController.finalizeUpdatesWithAdjustContetnOffset(collectionView)
     }
     
     public override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
@@ -55,10 +55,6 @@ public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttribute
             offsetController.refreshVisibleAttributes()
         }
         super.invalidateLayout(with: context)
-    }
-            
-    override open func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-        offsetController.targetContentOffset(forProposedContentOffset: proposedContentOffset)
     }
 }
 

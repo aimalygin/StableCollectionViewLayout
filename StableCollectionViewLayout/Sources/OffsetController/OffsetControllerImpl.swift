@@ -49,7 +49,7 @@ public class OffsetControllerImpl: OffsetController {
     public func prepare(forCollectionViewUpdates updateItems: [CollectionViewUpdateItem]) {
         guard
             let collectionDataSource = collectionDataSource,
-                enableAutomaticContentOffsetAdjustment else {
+                enableAutomaticContentOffsetAdjustment, updateItems.count > 0 else {
                 return
         }
         
@@ -66,21 +66,20 @@ public class OffsetControllerImpl: OffsetController {
         )
     }
     
-    public func resetOffset() {
-        offset = nil
-    }
-    
-    public func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-        guard let offset = offset else {
-            return proposedContentOffset
+    public func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint? {
+        guard let targetContentOffset = offset else {
+            return nil
         }
-        return offset
+        offset = nil
+        return targetContentOffset
     }
     
     public func refreshVisibleAttributes() {
         refreshVisibleState()
         
-        guard let layoutDataSource = layoutDataSource else {
+        guard let layoutDataSource = layoutDataSource,
+              let visibleIndexPaths = collectionDataSource?.indexPathsForVisibleItems,
+                visibleIndexPaths.count > 0 else {
             return
         }
         let visibleCache = visibleStateIndexes
