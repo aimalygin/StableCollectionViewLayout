@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttributesProvider {
+open class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttributesProvider {
     /// If true then `contentOffset` will adjust when the collection view is updated (batchUpdate, insert, delete or reload).
     /// Default is true
-    public var enableAutomaticContentOffsetAdjustment: Bool {
+    open var enableAutomaticContentOffsetAdjustment: Bool {
         set {
             offsetController.enableAutomaticContentOffsetAdjustment = newValue
         }
@@ -32,7 +32,7 @@ public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttribute
         }
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
         
@@ -41,7 +41,7 @@ public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttribute
             super.prepare(forCollectionViewUpdates: updateItems)
         }
         offsetController.prepare(
-            forCollectionViewUpdates: updateItems.map({ CollectionViewUpdateItem(item: $0) })
+            forCollectionViewUpdates: updateItems.map { CollectionViewUpdateItem(item: $0) }
         )
     }
     
@@ -50,7 +50,7 @@ public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttribute
         offsetController.finalizeUpdatesWithAdjustContetnOffset(collectionView)
     }
     
-    public override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
+    override open func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
         if !context.invalidateEverything {
             offsetController.refreshVisibleAttributes()
         }
@@ -60,19 +60,19 @@ public class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttribute
 
 extension StableCollectionViewLayout: CollectionViewDataProvider {
     
-    public var indexPathsForVisibleItems: [IndexPath] {
+    open var indexPathsForVisibleItems: [IndexPath] {
         collectionView?.indexPathsForVisibleItems ?? []
     }
     
-    public var numberOfSections: Int {
+    open var numberOfSections: Int {
         collectionView?.numberOfSections ?? 0
     }
     
-    public func numberOfItems(inSection section: Int) -> Int {
+    open func numberOfItems(inSection section: Int) -> Int {
         collectionView?.numberOfItems(inSection: section) ?? 0
     }
     
-    public var contentOffset: CGPoint {
+    open var contentOffset: CGPoint {
         collectionView?.contentOffset ?? CGPoint.zero
     }
 }
