@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
+@objc
 public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAttributesProvider {
     /// If true then `contentOffset` will adjust when the collection view is updated (batchUpdate, insert, delete or reload).
     /// Default is true
-    public var enableAutomaticContentOffsetAdjustment: Bool {
+    @objc public var enableAutomaticContentOffsetAdjustment: Bool {
         set {
             offsetController.enableAutomaticContentOffsetAdjustment = newValue
         }
@@ -25,11 +26,16 @@ public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutA
         collectionDataSource: self
     )
     
+    
     public init(offsetController: OffsetController? = nil) {
         super.init()
         if let controller = offsetController {
             self.offsetController = controller
         }
+    }
+    
+    public override init() {
+        super.init()
     }
     
     required init?(coder: NSCoder) {
