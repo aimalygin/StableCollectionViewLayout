@@ -49,7 +49,7 @@ Also, you can create the own subclass of `StableCollectionViewLayout` and use it
 The preferred installation method is with [CocoaPods](https://cocoapods.org). Add the following to your `Podfile`:
 
 ```ruby
-pod 'StableCollectionViewLayout', '~> 1.0.0'
+pod 'StableCollectionViewLayout', '~> 1.0.2'
 ```
 
 ### Carthage
@@ -57,7 +57,7 @@ pod 'StableCollectionViewLayout', '~> 1.0.0'
 For [Carthage](https://github.com/Carthage/Carthage), add the following to your `Cartfile`:
 
 ```ogdl
-github "aimalygin/StableCollectionViewLayout" ~> 1.0.0
+github "aimalygin/StableCollectionViewLayout" ~> 1.0.2
 ```
 
 ### Swift Package Manager
