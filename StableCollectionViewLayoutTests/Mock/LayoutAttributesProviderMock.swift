@@ -6,41 +6,40 @@
 //
 
 import Foundation
-import UIKit
 @testable import StableCollectionViewLayout
+import UIKit
 
 class LayoutAttributesProviderMock: LayoutAttributesProvider {
-    
     var scrollDirection: UICollectionView.ScrollDirection = .vertical
     var attributes: [IndexPath: UICollectionViewLayoutAttributes] = [:]
-    
+
     func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         attributes[indexPath]
     }
-    
-    func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+
+    func layoutAttributesForSupplementaryView(ofKind _: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         attributes[indexPath]
     }
-    
-    func initialLayoutAttributesForAppearingSupplementaryElement(ofKind elementKind: String, at elementIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+
+    func initialLayoutAttributesForAppearingSupplementaryElement(ofKind _: String, at elementIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         attributes[elementIndexPath]
     }
-    
+
     // Unused methods
-    
-    func layoutAttributesForDecorationView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+
+    func layoutAttributesForDecorationView(ofKind _: String, at _: IndexPath) -> UICollectionViewLayoutAttributes? {
         return nil
     }
-    
-    func finalLayoutAttributesForDisappearingSupplementaryElement(ofKind elementKind: String, at elementIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+
+    func finalLayoutAttributesForDisappearingSupplementaryElement(ofKind _: String, at _: IndexPath) -> UICollectionViewLayoutAttributes? {
         return nil
     }
-    
-    func initialLayoutAttributesForAppearingDecorationElement(ofKind elementKind: String, at decorationIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+
+    func initialLayoutAttributesForAppearingDecorationElement(ofKind _: String, at _: IndexPath) -> UICollectionViewLayoutAttributes? {
         return nil
     }
-    
-    func finalLayoutAttributesForDisappearingDecorationElement(ofKind elementKind: String, at decorationIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+
+    func finalLayoutAttributesForDisappearingDecorationElement(ofKind _: String, at _: IndexPath) -> UICollectionViewLayoutAttributes? {
         return nil
     }
 }

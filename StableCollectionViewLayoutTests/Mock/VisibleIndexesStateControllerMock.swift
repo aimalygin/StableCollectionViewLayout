@@ -9,9 +9,9 @@ import Foundation
 @testable import StableCollectionViewLayout
 
 class VisibleIndexesStateControllerMock: VisibleIndexesStateController {
-    var state: VisibleIndexesState = VisibleIndexesState()
-    
-    func calculate(withIndexPathsForVisibleItems indexPaths: [IndexPath]) { }
-    
-    func update(with item: CollectionViewUpdateItem) { }
+    var state: VisibleIndexesState = .init()
+
+    func calculate(withIndexPathsForVisibleItems _: [IndexPath]) {}
+
+    func update(with _: CollectionViewUpdateItem) {}
 }

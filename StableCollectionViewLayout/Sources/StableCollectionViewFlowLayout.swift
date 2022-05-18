@@ -20,21 +20,20 @@ open class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAtt
             offsetController.enableAutomaticContentOffsetAdjustment
         }
     }
-    
+
     private lazy var offsetController: OffsetController = OffsetControllerImpl(
         layoutDataSource: self,
         collectionDataSource: self
     )
-    
-    
+
     public init(offsetController: OffsetController? = nil) {
         super.init()
         if let controller = offsetController {
             self.offsetController = controller
         }
     }
-    
-    public override init() {
+
+    override public init() {
         super.init()
     }
 
@@ -42,7 +41,7 @@ open class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAtt
     public required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-        
+
     override open func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
         defer {
             super.prepare(forCollectionViewUpdates: updateItems)
@@ -51,7 +50,7 @@ open class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAtt
             forCollectionViewUpdates: updateItems.map { CollectionViewUpdateItem(item: $0) }
         )
     }
-    
+
     override open func finalizeCollectionViewUpdates() {
         super.finalizeCollectionViewUpdates()
         offsetController.finalizeUpdatesWithAdjustContetnOffset(collectionView)
@@ -66,19 +65,18 @@ open class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAtt
 }
 
 extension StableCollectionViewFlowLayout: CollectionViewDataProvider {
-    
     open var indexPathsForVisibleItems: [IndexPath] {
         collectionView?.indexPathsForVisibleItems ?? []
     }
-    
+
     open var numberOfSections: Int {
         collectionView?.numberOfSections ?? 0
     }
-    
+
     open func numberOfItems(inSection section: Int) -> Int {
         collectionView?.numberOfItems(inSection: section) ?? 0
     }
-    
+
     open var contentOffset: CGPoint {
         collectionView?.contentOffset ?? CGPoint.zero
     }

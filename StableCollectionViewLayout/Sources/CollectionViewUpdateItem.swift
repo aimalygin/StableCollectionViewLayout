@@ -13,7 +13,7 @@ public struct CollectionViewUpdateItem: Equatable {
     let indexPathAfterUpdate: IndexPath?
     let updateAction: UICollectionViewUpdateItem.Action
     let isSection: Bool
-    
+
     var isRow: Bool {
         !isSection
     }
@@ -27,7 +27,7 @@ extension CollectionViewUpdateItem {
             updateAction: item.updateAction
         )
     }
-    
+
     init(
         indexPathBeforeUpdate: IndexPath?,
         indexPathAfterUpdate: IndexPath?,
@@ -35,7 +35,7 @@ extension CollectionViewUpdateItem {
     ) {
         let isSection = indexPathBeforeUpdate?.row == Int.max ||
             indexPathAfterUpdate?.row == Int.max
-        
+
         self.init(
             indexPathBeforeUpdate: indexPathBeforeUpdate,
             indexPathAfterUpdate: indexPathAfterUpdate,

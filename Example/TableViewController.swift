@@ -16,13 +16,14 @@ class TableViewController: UITableViewController {
         } else {
             scrollDirection = .vertical
         }
-        
+
         sender.title = scrollDirection.title
     }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         guard let identifier = segue.identifier else {
             return
         }
@@ -32,7 +33,6 @@ class TableViewController: UITableViewController {
             controller?.rowsPerSection = rows
         }
     }
-
 }
 
 extension UICollectionView.ScrollDirection {

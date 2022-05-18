@@ -13,31 +13,31 @@ public protocol LayoutAttributesProvider: AnyObject {
         ofKind elementKind: String,
         at indexPath: IndexPath
     ) -> UICollectionViewLayoutAttributes?
-    
+
     func layoutAttributesForDecorationView(
         ofKind elementKind: String,
         at indexPath: IndexPath
     ) -> UICollectionViewLayoutAttributes?
-    
+
     func initialLayoutAttributesForAppearingSupplementaryElement(
         ofKind elementKind: String,
         at elementIndexPath: IndexPath
     ) -> UICollectionViewLayoutAttributes?
-    
+
     func finalLayoutAttributesForDisappearingSupplementaryElement(
         ofKind elementKind: String,
         at elementIndexPath: IndexPath
     ) -> UICollectionViewLayoutAttributes?
-    
+
     func initialLayoutAttributesForAppearingDecorationElement(
         ofKind elementKind: String,
         at decorationIndexPath: IndexPath
     ) -> UICollectionViewLayoutAttributes?
-    
+
     func finalLayoutAttributesForDisappearingDecorationElement(
         ofKind elementKind: String,
         at decorationIndexPath: IndexPath
     ) -> UICollectionViewLayoutAttributes?
-    
-    func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?    
+
+    func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
 }
