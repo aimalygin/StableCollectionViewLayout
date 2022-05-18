@@ -47,7 +47,7 @@ public class OffsetControllerImpl: OffsetController {
     public func prepare(forCollectionViewUpdates updateItems: [CollectionViewUpdateItem]) {
         guard
             let collectionDataSource = collectionDataSource,
-            enableAutomaticContentOffsetAdjustment, updateItems.count > 0
+            enableAutomaticContentOffsetAdjustment, !updateItems.isEmpty
         else {
             return
         }
@@ -78,7 +78,7 @@ public class OffsetControllerImpl: OffsetController {
 
         guard let layoutDataSource = layoutDataSource,
               let visibleIndexPaths = collectionDataSource?.indexPathsForVisibleItems,
-              visibleIndexPaths.count > 0
+              !visibleIndexPaths.isEmpty
         else {
             return
         }
@@ -101,8 +101,7 @@ public class OffsetControllerImpl: OffsetController {
         }
 
         guard let collectionDataSource = collectionDataSource,
-              collectionDataSource.numberOfSections > visibleState.targetIndexPath.section,
-              collectionDataSource.numberOfItems(inSection: visibleState.targetIndexPath.section) > visibleState.targetIndexPath.row
+              collectionDataSource.isValid(indexPath: visibleState.targetIndexPath)
         else {
             return .zero
         }

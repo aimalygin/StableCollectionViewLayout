@@ -17,3 +17,10 @@ public protocol CollectionViewDataProvider: AnyObject {
 
     func numberOfItems(inSection section: Int) -> Int
 }
+
+public extension CollectionViewDataProvider {
+    func isValid(indexPath: IndexPath) -> Bool {
+        numberOfSections > indexPath.section
+            && numberOfItems(inSection: indexPath.section) > indexPath.row
+    }
+}

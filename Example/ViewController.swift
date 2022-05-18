@@ -24,7 +24,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionViewLayout: layout
     )
 
-    var items: [(String, CGFloat)] = (0 ..< 100).map { i in ("\(i)", randomHeight()) }
+    var items: [(String, CGFloat)] = (0 ..< 100).map { index in ("\(index)", randomHeight()) }
 
     let batchCount = 30
 
@@ -91,7 +91,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if flowLayout.scrollDirection == .vertical {
             return CGSize(width: collectionView.frame.width / CGFloat(rowsPerSection) - 10, height: item.1)
         } else {
-            return CGSize(width: item.1, height: collectionView.frame.height / CGFloat(rowsPerSection) - flowLayout.minimumLineSpacing * CGFloat(rowsPerSection) * 2)
+            let height = collectionView.frame.height / CGFloat(rowsPerSection)
+                - flowLayout.minimumLineSpacing * CGFloat(rowsPerSection) * 2
+            return CGSize(
+                width: item.1,
+                height: height
+            )
         }
     }
 
@@ -100,7 +105,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 
     private static func randomBool() -> Bool {
-        return arc4random_uniform(2) == 0
+        return Bool.random()
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

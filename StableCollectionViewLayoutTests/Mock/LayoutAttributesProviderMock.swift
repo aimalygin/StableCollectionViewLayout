@@ -17,29 +17,47 @@ class LayoutAttributesProviderMock: LayoutAttributesProvider {
         attributes[indexPath]
     }
 
-    func layoutAttributesForSupplementaryView(ofKind _: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func layoutAttributesForSupplementaryView(
+        ofKind _: String,
+        at indexPath: IndexPath
+    ) -> UICollectionViewLayoutAttributes? {
         attributes[indexPath]
     }
 
-    func initialLayoutAttributesForAppearingSupplementaryElement(ofKind _: String, at elementIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func initialLayoutAttributesForAppearingSupplementaryElement(
+        ofKind _: String,
+        at elementIndexPath: IndexPath
+    ) -> UICollectionViewLayoutAttributes? {
         attributes[elementIndexPath]
     }
 
     // Unused methods
 
-    func layoutAttributesForDecorationView(ofKind _: String, at _: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func layoutAttributesForDecorationView(
+        ofKind _: String,
+        at _: IndexPath
+    ) -> UICollectionViewLayoutAttributes? {
         return nil
     }
 
-    func finalLayoutAttributesForDisappearingSupplementaryElement(ofKind _: String, at _: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func finalLayoutAttributesForDisappearingSupplementaryElement(
+        ofKind _: String,
+        at _: IndexPath
+    ) -> UICollectionViewLayoutAttributes? {
         return nil
     }
 
-    func initialLayoutAttributesForAppearingDecorationElement(ofKind _: String, at _: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func initialLayoutAttributesForAppearingDecorationElement(
+        ofKind _: String,
+        at _: IndexPath
+    ) -> UICollectionViewLayoutAttributes? {
         return nil
     }
 
-    func finalLayoutAttributesForDisappearingDecorationElement(ofKind _: String, at _: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func finalLayoutAttributesForDisappearingDecorationElement(
+        ofKind _: String,
+        at _: IndexPath
+    ) -> UICollectionViewLayoutAttributes? {
         return nil
     }
 }
