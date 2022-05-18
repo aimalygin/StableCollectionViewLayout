@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 @objc
-public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAttributesProvider {
+open class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAttributesProvider {
     /// If true then `contentOffset` will adjust when the collection view is updated (batchUpdate, insert, delete or reload).
     /// Default is true
-    @objc public var enableAutomaticContentOffsetAdjustment: Bool {
+    @objc open var enableAutomaticContentOffsetAdjustment: Bool {
         set {
             offsetController.enableAutomaticContentOffsetAdjustment = newValue
         }
@@ -37,8 +37,9 @@ public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutA
     public override init() {
         super.init()
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    public required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
         
@@ -47,7 +48,7 @@ public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutA
             super.prepare(forCollectionViewUpdates: updateItems)
         }
         offsetController.prepare(
-            forCollectionViewUpdates: updateItems.map({ CollectionViewUpdateItem(item: $0) })
+            forCollectionViewUpdates: updateItems.map { CollectionViewUpdateItem(item: $0) }
         )
     }
     
@@ -55,8 +56,8 @@ public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutA
         super.finalizeCollectionViewUpdates()
         offsetController.finalizeUpdatesWithAdjustContetnOffset(collectionView)
     }
-    
-    public override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
+
+    override public func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
         if !context.invalidateEverything {
             offsetController.refreshVisibleAttributes()
         }
@@ -66,19 +67,19 @@ public class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutA
 
 extension StableCollectionViewFlowLayout: CollectionViewDataProvider {
     
-    public var indexPathsForVisibleItems: [IndexPath] {
+    open var indexPathsForVisibleItems: [IndexPath] {
         collectionView?.indexPathsForVisibleItems ?? []
     }
     
-    public var numberOfSections: Int {
+    open var numberOfSections: Int {
         collectionView?.numberOfSections ?? 0
     }
     
-    public func numberOfItems(inSection section: Int) -> Int {
+    open func numberOfItems(inSection section: Int) -> Int {
         collectionView?.numberOfItems(inSection: section) ?? 0
     }
     
-    public var contentOffset: CGPoint {
+    open var contentOffset: CGPoint {
         collectionView?.contentOffset ?? CGPoint.zero
     }
 }
