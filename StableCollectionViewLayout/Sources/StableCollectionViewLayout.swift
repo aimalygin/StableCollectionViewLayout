@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
+@objc
 open class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttributesProvider {
     /// If true then `contentOffset` will adjust when the collection view is updated (batchUpdate, insert, delete or reload).
     /// Default is true
-    open var enableAutomaticContentOffsetAdjustment: Bool {
+    @objc open var enableAutomaticContentOffsetAdjustment: Bool {
         set {
             offsetController.enableAutomaticContentOffsetAdjustment = newValue
         }

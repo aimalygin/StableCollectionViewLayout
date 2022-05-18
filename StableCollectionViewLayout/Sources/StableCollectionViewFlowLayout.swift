@@ -57,7 +57,7 @@ open class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAtt
         offsetController.finalizeUpdatesWithAdjustContetnOffset(collectionView)
     }
 
-    override public func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
+    override open func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
         if !context.invalidateEverything {
             offsetController.refreshVisibleAttributes()
         }
