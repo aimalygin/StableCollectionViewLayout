@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StableCollectionViewLayout'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'The StableCollectionViewLayout adjusts content offset'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ You can insert, delete or reload items and StableCollectionViewLayout will take 
   s.source           = { :git => 'https://github.com/aimalygin/StableCollectionViewLayout.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '9.0'
   s.swift_versions = '5.0'
 
   s.source_files = 'StableCollectionViewLayout/Sources/**/*'
