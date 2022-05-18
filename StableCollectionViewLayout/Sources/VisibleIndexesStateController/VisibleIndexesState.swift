@@ -11,7 +11,7 @@ struct VisibleIndexesState: Equatable {
     let targetIndexPath: IndexPath
     let topIndexPath: IndexPath
     let bottomIndexPath: IndexPath
-    
+
     init(
         targetIndexPath: IndexPath = .zero,
         topIndexPath: IndexPath = .zero,
@@ -29,7 +29,7 @@ struct VisibleIndexesState: Equatable {
             bottomIndexPath: bottomIndexPath.insertedRow(at: indexPath)
         )
     }
-    
+
     func insertedSection(at indexPath: IndexPath) -> VisibleIndexesState {
         VisibleIndexesState(
             targetIndexPath: targetIndexPath.insertedSection(at: indexPath),
@@ -37,7 +37,7 @@ struct VisibleIndexesState: Equatable {
             bottomIndexPath: bottomIndexPath.insertedSection(at: indexPath)
         )
     }
-    
+
     func deletedRow(at indexPath: IndexPath) -> VisibleIndexesState {
         VisibleIndexesState(
             targetIndexPath: targetIndexPath.deletedRow(at: indexPath),
@@ -45,7 +45,7 @@ struct VisibleIndexesState: Equatable {
             bottomIndexPath: bottomIndexPath.deletedRow(at: indexPath)
         )
     }
-    
+
     func deletedSection(at indexPath: IndexPath) -> VisibleIndexesState {
         VisibleIndexesState(
             targetIndexPath: targetIndexPath.deletedSection(at: indexPath),

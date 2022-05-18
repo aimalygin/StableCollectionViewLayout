@@ -20,23 +20,24 @@ open class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttributesP
             offsetController.enableAutomaticContentOffsetAdjustment
         }
     }
-    
+
     private lazy var offsetController: OffsetController = OffsetControllerImpl(
         layoutDataSource: self,
         collectionDataSource: self
     )
-    
+
     public init(offsetController: OffsetController? = nil) {
         super.init()
         if let controller = offsetController {
             self.offsetController = controller
         }
     }
-    
-    public required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    public required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-        
+
     override open func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
         defer {
             super.prepare(forCollectionViewUpdates: updateItems)
@@ -45,12 +46,12 @@ open class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttributesP
             forCollectionViewUpdates: updateItems.map { CollectionViewUpdateItem(item: $0) }
         )
     }
-    
+
     override open func finalizeCollectionViewUpdates() {
         super.finalizeCollectionViewUpdates()
         offsetController.finalizeUpdatesWithAdjustContetnOffset(collectionView)
     }
-    
+
     override open func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
         if !context.invalidateEverything {
             offsetController.refreshVisibleAttributes()
@@ -60,19 +61,18 @@ open class StableCollectionViewLayout: UICollectionViewLayout, LayoutAttributesP
 }
 
 extension StableCollectionViewLayout: CollectionViewDataProvider {
-    
     open var indexPathsForVisibleItems: [IndexPath] {
         collectionView?.indexPathsForVisibleItems ?? []
     }
-    
+
     open var numberOfSections: Int {
         collectionView?.numberOfSections ?? 0
     }
-    
+
     open func numberOfItems(inSection section: Int) -> Int {
         collectionView?.numberOfItems(inSection: section) ?? 0
     }
-    
+
     open var contentOffset: CGPoint {
         collectionView?.contentOffset ?? CGPoint.zero
     }

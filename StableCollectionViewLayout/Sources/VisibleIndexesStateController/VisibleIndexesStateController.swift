@@ -8,10 +8,9 @@
 import Foundation
 
 protocol VisibleIndexesStateController {
-    
     var state: VisibleIndexesState { get }
-    
+
     func calculate(withIndexPathsForVisibleItems indexPaths: [IndexPath])
-    
+
     func update(with item: CollectionViewUpdateItem)
 }

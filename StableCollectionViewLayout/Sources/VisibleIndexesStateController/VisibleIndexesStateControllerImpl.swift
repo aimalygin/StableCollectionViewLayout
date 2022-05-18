@@ -9,9 +9,9 @@ import Foundation
 
 class VisibleIndexesStateControllerImpl: VisibleIndexesStateController {
     var externalTargetIndexPath: IndexPath?
-    
-    private(set) var state: VisibleIndexesState = VisibleIndexesState()
-    
+
+    private(set) var state: VisibleIndexesState = .init()
+
     func calculate(withIndexPathsForVisibleItems indexPaths: [IndexPath]) {
         calculate(
             with: externalTargetIndexPath,
@@ -84,28 +84,28 @@ extension VisibleIndexesStateControllerImpl {
             break
         }
     }
-    
+
     private func inserted(with item: CollectionViewUpdateItem) -> VisibleIndexesState {
         guard let indexPath = item.indexPathAfterUpdate else {
             return state
         }
-        
+
         if item.isSection {
             return state.insertedSection(at: indexPath)
         }
-        
+
         return state.insertedRow(at: indexPath)
     }
-    
+
     private func deleted(with item: CollectionViewUpdateItem) -> VisibleIndexesState {
         guard let indexPath = item.indexPathBeforeUpdate else {
             return state
         }
-        
+
         if item.isSection {
             return state.deletedSection(at: indexPath)
         }
-        
+
         return state.deletedRow(at: indexPath)
     }
 }

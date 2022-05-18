@@ -5,44 +5,42 @@
 //  Created by Anton Malygin on 17.02.2021.
 //
 
-import UIKit
 import StableCollectionViewLayout
+import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     var rowsPerSection: Int = 1
     var scrollDirection: UICollectionView.ScrollDirection = .vertical
-    
+
     private lazy var layout: StableCollectionViewFlowLayout = {
         let layout = StableCollectionViewFlowLayout()
         layout.scrollDirection = scrollDirection
         layout.minimumInteritemSpacing = 1
         return layout
     }()
-    
+
     private lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: layout
     )
-    
-    var items: [(String, CGFloat)] = (0..<100).map({ i in ("\(i)", randomHeight()) })
-    
+
+    var items: [(String, CGFloat)] = (0 ..< 100).map { i in ("\(i)", randomHeight()) }
+
     let batchCount = 30
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
+
         view.backgroundColor = .white
     }
-    
+
     private func setupCollectionView() {
-        
         collectionView.delegate = self
         collectionView.dataSource = self
-                
+
         view.addSubview(collectionView)
-        
+
         if #available(iOS 13.0, *) {
             collectionView.backgroundColor = .systemBackground
         } else {
@@ -56,17 +54,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let leading = collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
         let trailing = collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         NSLayoutConstraint.activate([top, bottom, trailing, leading])
-        
+
         collectionView.registerCell(of: DemoCollectionViewCell.self)
     }
-    
+
     // MARK: - UICollectionViewDataSource
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in _: UICollectionView) -> Int {
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return items.count
     }
 
@@ -74,7 +72,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-
         let item = items[indexPath.row]
 
         let cell = collectionView.dequeueReusableCell(DemoCollectionViewCell.self, for: indexPath)
@@ -92,39 +89,38 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         let item = items[indexPath.row]
         if flowLayout.scrollDirection == .vertical {
-            return CGSize(width: collectionView.frame.width/CGFloat(rowsPerSection) - 10, height: item.1)
+            return CGSize(width: collectionView.frame.width / CGFloat(rowsPerSection) - 10, height: item.1)
         } else {
-            return CGSize(width: item.1, height: collectionView.frame.height/CGFloat(rowsPerSection) - flowLayout.minimumLineSpacing*CGFloat(rowsPerSection)*2)
+            return CGSize(width: item.1, height: collectionView.frame.height / CGFloat(rowsPerSection) - flowLayout.minimumLineSpacing * CGFloat(rowsPerSection) * 2)
         }
     }
-    
+
     private static func randomHeight() -> CGFloat {
-        CGFloat(floor(Double.random(in: 100...200)))
+        CGFloat(floor(Double.random(in: 100 ... 200)))
     }
-    
+
     private static func randomBool() -> Bool {
         return arc4random_uniform(2) == 0
     }
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
             return
         }
-        
+
         let inset = CGFloat(100)
-        
+
         if layout.scrollDirection == .vertical {
             if scrollView.contentOffset.y < inset {
-                self.moveUp()
+                moveUp()
             } else if scrollView.contentOffset.y + scrollView.frame.height > scrollView.contentSize.height - inset {
-                self.moveDown()
+                moveDown()
             }
         } else {
             if scrollView.contentOffset.x < inset {
-                self.moveUp()
+                moveUp()
             } else if scrollView.contentOffset.x + scrollView.frame.width > scrollView.contentSize.width - inset {
-                self.moveDown()
+                moveDown()
             }
         }
     }
@@ -132,8 +128,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private func moveUp() {
         let tail = items.suffix(batchCount)
 
-        let indexPaths = (0..<batchCount).map({ IndexPath(row: $0, section: 0) })
-        let deleteIndexPaths = (items.count - batchCount..<items.count).map({ IndexPath(row: $0, section: 0) })
+        let indexPaths = (0 ..< batchCount).map { IndexPath(row: $0, section: 0) }
+        let deleteIndexPaths = (items.count - batchCount ..< items.count).map { IndexPath(row: $0, section: 0) }
 
         items.removeLast(batchCount)
         items.insert(contentsOf: tail, at: 0)
@@ -144,12 +140,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             }, completion: nil)
         }
     }
-    
+
     private func moveDown() {
         let head = items.prefix(batchCount)
 
-        let indexPaths = (items.count - batchCount..<items.count).map({ IndexPath(row: $0, section: 0) })
-        let deleteIndexPaths = (0..<batchCount).map({ IndexPath(row: $0, section: 0) })
+        let indexPaths = (items.count - batchCount ..< items.count).map { IndexPath(row: $0, section: 0) }
+        let deleteIndexPaths = (0 ..< batchCount).map { IndexPath(row: $0, section: 0) }
         items.removeFirst(batchCount)
         items.append(contentsOf: head)
         UIView.performWithoutAnimation {
@@ -176,4 +172,3 @@ extension UICollectionView {
         return cell
     }
 }
-

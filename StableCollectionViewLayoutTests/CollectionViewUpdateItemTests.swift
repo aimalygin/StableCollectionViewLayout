@@ -5,11 +5,10 @@
 //  Created by Anton Malygin on 17.10.2021.
 //
 
-import XCTest
 @testable import StableCollectionViewLayout
+import XCTest
 
 class CollectionViewUpdateItemTests: XCTestCase {
-
     func testInitRowItem() throws {
         let expectedItem = CollectionViewUpdateItem(
             indexPathBeforeUpdate: nil,
@@ -22,10 +21,10 @@ class CollectionViewUpdateItemTests: XCTestCase {
             indexPathAfterUpdate: expectedItem.indexPathAfterUpdate,
             updateAction: expectedItem.updateAction
         )
-        
+
         XCTAssertEqual(expectedItem, sut)
     }
-    
+
     func testInitSectionItem() throws {
         let expectedItem = CollectionViewUpdateItem(
             indexPathBeforeUpdate: nil,
@@ -38,8 +37,7 @@ class CollectionViewUpdateItemTests: XCTestCase {
             indexPathAfterUpdate: expectedItem.indexPathAfterUpdate,
             updateAction: expectedItem.updateAction
         )
-        
+
         XCTAssertEqual(expectedItem, sut)
     }
-
 }
