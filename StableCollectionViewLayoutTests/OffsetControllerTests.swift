@@ -41,6 +41,10 @@ final class OffsetControllerTests: XCTestCase {
         sut.refreshVisibleAttributes()
         layoutAttribute.attributes = [Env.visibleState.targetIndexPath:
                                         Env.targetVisibleAtrributes]
+        
+        collectionViewDataProvider.numberOfSections = 1
+        collectionViewDataProvider.numberOfItemsInSection = Env.visibleState.targetIndexPath.row + 1
+        
         sut.prepare(forCollectionViewUpdates: [CollectionViewUpdateItem.empty()])
         
         let result = sut.targetContentOffset(forProposedContentOffset: CGPoint.zero)!
