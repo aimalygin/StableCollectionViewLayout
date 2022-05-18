@@ -10,7 +10,7 @@ import UIKit
 class TableViewController: UITableViewController {
     private var scrollDirection: UICollectionView.ScrollDirection = .vertical
 
-    @IBAction func changeScrollDirection(_ sender: UIBarButtonItem) {
+    @IBAction private func changeScrollDirection(_ sender: UIBarButtonItem) {
         if scrollDirection == .vertical {
             scrollDirection = .horizontal
         } else {
@@ -43,7 +43,7 @@ extension UICollectionView.ScrollDirection {
         case .horizontal:
             return "Horizontal"
         @unknown default:
-            fatalError()
+            fatalError("Unknown direction")
         }
     }
 }

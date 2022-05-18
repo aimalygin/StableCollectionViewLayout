@@ -13,11 +13,11 @@ open class StableCollectionViewFlowLayout: UICollectionViewFlowLayout, LayoutAtt
     /// If true then `contentOffset` will adjust when the collection view is updated (batchUpdate, insert, delete or reload).
     /// Default is true
     @objc open var enableAutomaticContentOffsetAdjustment: Bool {
-        set {
-            offsetController.enableAutomaticContentOffsetAdjustment = newValue
-        }
         get {
             offsetController.enableAutomaticContentOffsetAdjustment
+        }
+        set {
+            offsetController.enableAutomaticContentOffsetAdjustment = newValue
         }
     }
 
