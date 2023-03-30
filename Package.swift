@@ -26,7 +26,8 @@ let package = Package(
         ),
         .testTarget(
             name: "StableCollectionViewLayoutTests",
-            dependencies: ["StableCollectionViewLayout"]
+            dependencies: ["StableCollectionViewLayout"],
+            path: "StableCollectionViewLayoutTests"
         ),
     ]
 )
