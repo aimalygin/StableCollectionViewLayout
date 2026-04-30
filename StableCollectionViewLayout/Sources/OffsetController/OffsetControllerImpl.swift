@@ -96,7 +96,7 @@ public class OffsetControllerImpl: OffsetController {
 
         let previousVisibleFrame = previousVisibleAttributes[visibleState.targetIndexPath] ?? .zero
 
-        for item in updates {
+        for item in updates where isSane(updateItem: item) {
             visibleStateController.update(with: item)
         }
 
@@ -113,6 +113,23 @@ public class OffsetControllerImpl: OffsetController {
             new: newVisibleFrame
         )
         return calculatedOffsetDiff
+    }
+
+    private func isSane(updateItem: CollectionViewUpdateItem) -> Bool {
+        isSane(indexPath: updateItem.indexPathBeforeUpdate, isSection: updateItem.isSection)
+            && isSane(indexPath: updateItem.indexPathAfterUpdate, isSection: updateItem.isSection)
+    }
+
+    private func isSane(indexPath: IndexPath?, isSection: Bool) -> Bool {
+        guard let indexPath else {
+            return true
+        }
+
+        if isSection {
+            return indexPath.section >= 0 && indexPath.item == Int.max
+        }
+
+        return indexPath.section >= 0 && indexPath.item >= 0
     }
 
     private func refreshVisibleState() {

@@ -20,7 +20,17 @@ public protocol CollectionViewDataProvider: AnyObject {
 
 public extension CollectionViewDataProvider {
     func isValid(indexPath: IndexPath) -> Bool {
-        numberOfSections > indexPath.section
-            && numberOfItems(inSection: indexPath.section) > indexPath.row
+        let section = indexPath.section
+        let item = indexPath.item
+
+        guard section >= 0, item >= 0 else {
+            return false
+        }
+
+        guard section < numberOfSections else {
+            return false
+        }
+
+        return item < numberOfItems(inSection: section)
     }
 }
